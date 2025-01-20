@@ -47,8 +47,6 @@ body {
   text-decoration: none;
 }
 
-
-
 .nav-links {
   list-style: none;
   display: flex;
@@ -94,24 +92,26 @@ body {
 }
 
 .hero-slider {
-  position: absolute;
+  position: relative; 
+  width: 100%; 
+  height: 100%;
+  overflow: hidden; 
+}
+
+.hero-slider img {
+  position: absolute; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  animation: slide 12s infinite;
+  object-fit: cover; 
+  opacity: 0; 
+  transition: opacity 1s ease-in-out, transform 2s ease-in-out; 
 }
 
-.hero-slider img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-@keyframes slide {
-  0%, 33.33% { transform: translateX(0); }
-  50%, 83.33% { transform: translateX(-100%); }
+.hero-slider img.active {
+  opacity: 1;
+  transform: translateX(0); 
 }
 
 .hero-title {
@@ -147,8 +147,8 @@ body {
   animation: highlight 3s ease-in-out forwards;
 }
 
-.highlight:hover{
-  animation: backwards 3s ease-in-out backwards
+.highlight:hover {
+  animation: backwards 3s ease-in-out backwards;
 }
 
 /* Work Section */
@@ -233,7 +233,7 @@ body {
     font-size: 1rem;
   }
 
-  .logo{
+  .logo {
     font-size: 1rem;
   }
 }
@@ -254,4 +254,18 @@ body {
   .hero-content {
     padding: 1rem;
   }
+}
+
+/* Slide Animation */
+@keyframes slide {
+  0% {
+    transform: translateX(100%); 
+  }
+  100% {
+    transform: translateX(0); 
+  }
+}
+
+.slide-image {
+  animation: slide 2s ease-in-out; 
 }
