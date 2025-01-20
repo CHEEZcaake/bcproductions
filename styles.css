@@ -217,7 +217,7 @@ body {
 }
 
 .grid-item {
-  background-color: #C4D9FF;
+  background-color: #ffeedd;
   border: 1px solid #ddd;
   padding: 2rem;
   text-align: center;
@@ -254,6 +254,15 @@ body {
   color: #fff;
   font-size: 0.9rem;
 }
+
+.align-center-text{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; 
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -349,3 +358,5 @@ body {
 .nav-links.closing {
   animation: slideUp 0.3s ease-in-out;
 }
+
+
