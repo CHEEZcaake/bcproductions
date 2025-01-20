@@ -217,18 +217,20 @@ body {
 }
 
 .grid-item {
-  background-color: #f8f9fa;
+  background-color: #C4D9FF;
   border: 1px solid #ddd;
   padding: 2rem;
   text-align: center;
   font-weight: bold;
+  border-radius: 75px;
   font-size: 1.2rem;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, border-radius 0.2s;
 }
 
 .grid-item:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
 }
 
 /* About Section */
@@ -326,6 +328,24 @@ body {
   }
 }
 
+
+
 .nav-links.show {
   animation: slideDown 0.3s ease-in-out;
+}
+
+
+/* Add closing animation for the menu */
+@keyframes slideUp {
+  from {
+    transform: translateY(0); /* Start fully visible */
+  }
+  to {
+    transform: translateY(-100%); /* Slide up out of view */
+  }
+}
+
+/* Apply the slideUp animation during closing */
+.nav-links.closing {
+  animation: slideUp 0.3s ease-in-out;
 }

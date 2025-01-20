@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header class="header">
     <div class="container">
@@ -45,19 +46,19 @@
   
   <section id="work" class="work-grid">
     <div class="container">
-      <h2 class="section-title">Our Work</h2>
+      <h2 class="section-title">My Work</h2>
       <div class="grid">
-        <div class="grid-item">Project 1</div>
-        <div class="grid-item">Project 2</div>
-        <div class="grid-item">Project 3</div>
-        <div class="grid-item">Project 4</div>
+        <div class="grid-item">Filmmaking</div>
+        <div class="grid-item">Videography</div>
+        <div class="grid-item">Photography</div>
+        <div class="grid-item">Graphics Design</div>
       </div>
     </div>
   </section>
 
   <section id="about" class="about">
     <div class="container">
-      <h2 class="section-title">About Us</h2>
+      <h2 class="section-title">About Me</h2>
       <p class="about-text">
         20 Year old living in the Netherlands 
       </p>
@@ -91,12 +92,25 @@
   
   // Get the hamburger icon and the menu
   const hamburger = document.getElementById('hamburger-icon');
-  const navLinks = document.querySelector('.nav-links');
+const navLinks = document.querySelector('.nav-links');
 
-  // Toggle menu visibility when the hamburger icon is clicked
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  });
+// Toggle menu visibility when the hamburger icon is clicked
+hamburger.addEventListener('click', () => {
+  if (navLinks.classList.contains('show')) {
+    // If the menu is open, add the 'closing' class
+    navLinks.classList.add('closing');
+
+    // Wait for the animation to finish
+    navLinks.addEventListener('animationend', () => {
+      navLinks.classList.remove('closing', 'show'); // Remove classes after animation
+    }, { once: true }); // Ensure the event listener runs only once
+  } else {
+    // If the menu is closed, simply add the 'show' class
+    navLinks.classList.add('show');
+  }
+});
+
+
 
   // Select the header element
 const header = document.querySelector('.header');
