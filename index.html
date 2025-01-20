@@ -18,6 +18,10 @@
           <li><a href="#work">Work</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>   
+        <div class="hamburger" id="hamburger-icon">
+          &#9776;
+        </div>
+
       </nav>
     </div>
   </header>
@@ -25,7 +29,7 @@
   <div class="hero-container">
     <section class="hero">
       <div class="hero-slider">
-        <img src="Photos/Photo1.jpg" alt="Image 1" class="slider-image">
+        <img src="Photos/Photo1.jpg" alt="Image 1" class="slider-image active">
         <img src="Photos/Photo2.jpg" alt="Image 2" class="slider-image">
         <img src="Photos/Photo3.jpg" alt="Image 3" class="slider-image">
       </div>
@@ -83,6 +87,18 @@
 
     // Start the image change every 5 seconds
     setInterval(changeImage, 5000);
+    
+  
+  // Get the hamburger icon and the menu
+  const hamburger = document.getElementById('hamburger-icon');
+  const navLinks = document.querySelector('.nav-links');
+
+  // Toggle menu visibility when the hamburger icon is clicked
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
+
   </script>
 </body>
 </html>
