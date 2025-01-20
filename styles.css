@@ -47,6 +47,8 @@ body {
   text-decoration: none;
 }
 
+
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -143,6 +145,10 @@ body {
 .highlight {
   display: inline-block;
   animation: highlight 3s ease-in-out forwards;
+}
+
+.highlight:hover{
+  animation: backwards 3s ease-in-out backwards
 }
 
 /* Work Section */
