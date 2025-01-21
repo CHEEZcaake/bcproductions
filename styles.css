@@ -217,14 +217,17 @@ body {
 }
 
 .grid-item {
-  background-color: #ffeedd;
-  border: 1px solid #ddd;
-  padding: 2rem;
+  border: 5px solid black;
+  padding: 4rem;
   text-align: center;
   font-weight: bold;
-  border-radius: 75px;
-  font-size: 1.2rem;
+  border-radius: 25px;
+  font-size: 2.5rem;
   transition: transform 0.3s, box-shadow 0.3s, border-radius 0.2s;
+  background-size: cover; /* Add this line */
+  background-position: center; /* Optional: Center the image */
+  color: white ;
+
 }
 
 .grid-item:hover {
