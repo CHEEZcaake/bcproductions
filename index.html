@@ -17,7 +17,7 @@
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#work">Work</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="index-folder/Contact.html">Contact</a></li>
         </ul>   
         <div class="hamburger" id="hamburger-icon">
           &#9776;
@@ -57,17 +57,21 @@
       <p class="section-subtitle">Same frame but,</p>
       <p class="section-subtitle" style="margin-bottom: 3rem;">different <span class="highlight"><b>Perspective</b></span></p>
       <h2 class="section-title">My Creations</h2>
-
-
-
-
+  
       <div class="grid">
-        <div style="background-image: url('Photos/Photo9.jpg');" class="grid-item">Filmmaking</div>
-        <div  style="background-image: url('Photos/Photo7.jpg');"  class="grid-item">Videography</div>
-        <div  style="background-image: url('Photos/photo10.jpg');"  class="grid-item">Photography</div>
+        <a href="index-folder/Filmmaking.html" class="grid-item" style="background-image: url('Photos/Photo9.jpg');">
+          <div class="grid-item-text">Filmmaking</div>
+        </a>
+        <a href="index-folder/Videography.html" class="grid-item" style="background-image: url('Photos/Photo7.jpg');">
+          <div class="grid-item-text">Videography</div>
+        </a>
+        <a href="index-folder/Photography.html" class="grid-item" style="background-image: url('Photos/photo10.jpg');">
+          <div class="grid-item-text">Photography</div>
+        </a>
       </div>
     </div>
   </section>
+
 
   <section id="about" class="about">
     <div class="container">
@@ -105,7 +109,7 @@
   <footer class="footer">
     <div class="container">
 
-      <a href="https://www.instagram.com/bc.productions.co/?utm_source=ig_web_button_share_sheet" target="_blank">
+      <a href="https://www.instagram.com/bc.productions.co/" target="_blank">
         <img src="Icons/Instagram.svg" alt="Instagram" class="footer-icon">
       </a>
 
@@ -121,64 +125,62 @@
   </footer>
   
   <script>
-    let currentIndex = 0;  // Tracks the current image index
-    const images = document.querySelectorAll('.hero-slider img');  // All images in the slider
+    let currentIndex = 0;  
+    const images = document.querySelectorAll('.hero-slider img'); 
 
     function changeImage() {
-      // Remove the 'active' class from the previous image
       images[currentIndex].classList.remove('active');
 
-      // Update the current index (cycle through images)
       currentIndex = (currentIndex + 1) % images.length;
 
-      // Add the 'active' class to the next image
+
       images[currentIndex].classList.add('active');
     }
 
-    // Start the image change every 5 seconds
+
     setInterval(changeImage, 5000);
     
   
-  // Get the hamburger icon and the menu
+
   const hamburger = document.getElementById('hamburger-icon');
 const navLinks = document.querySelector('.nav-links');
 
-// Toggle menu visibility when the hamburger icon is clicked
+
 hamburger.addEventListener('click', () => {
   if (navLinks.classList.contains('show')) {
-    // If the menu is open, add the 'closing' class
+
     navLinks.classList.add('closing');
 
-    // Wait for the animation to finish
     navLinks.addEventListener('animationend', () => {
-      navLinks.classList.remove('closing', 'show'); // Remove classes after animation
-    }, { once: true }); // Ensure the event listener runs only once
+      navLinks.classList.remove('closing', 'show');
+
+    }, { once: true }); 
   } else {
-    // If the menu is closed, simply add the 'show' class
+   
     navLinks.classList.add('show');
   }
 });
 
 
 
-  // Select the header element
+
 const header = document.querySelector('.header');
 
-let lastScrollY = window.scrollY; // Track the last scroll position
+let lastScrollY = window.scrollY; 
 
-// Function to handle scroll behavior
+
 function handleScroll() {
   if (window.scrollY > lastScrollY) {
-    // Scrolling down, hide the header
+
     header.classList.add('hidden');
   } else {
-    // Scrolling up, show the header
+
     header.classList.remove('hidden');
   }
-  lastScrollY = window.scrollY; // Update the last scroll position
+  lastScrollY = window.scrollY; 
 }
 
-// Attach scroll event listener
+
 window.addEventListener('scroll', handleScroll);
 
 </script>
