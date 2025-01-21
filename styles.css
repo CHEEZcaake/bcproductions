@@ -71,6 +71,29 @@ body {
   color: #0078ff;
 }
 
+.nav-links li a {
+  text-decoration: none;
+  color: inherit;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links li a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.lets-create a {
+  background-color: #ff6347; /* Example color: Tomato */
+  color: white;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+}
+
+.lets-create a:hover {
+  background-color: #e5533d; /* Darker shade of the button color */
+}
+
 .contact {
   padding: 3rem 0;
   text-align: center;
@@ -259,6 +282,7 @@ body {
   margin-bottom: 1rem;
   color: #000;
 }
+
 
 .grid {
   display: grid;
