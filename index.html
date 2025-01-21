@@ -127,63 +127,62 @@
   <script>
     let currentIndex = 0;  
     const images = document.querySelectorAll('.hero-slider img'); 
-
+  
     function changeImage() {
       images[currentIndex].classList.remove('active');
-
       currentIndex = (currentIndex + 1) % images.length;
-
-
       images[currentIndex].classList.add('active');
     }
-
-
-    setInterval(changeImage, 5000);
-    
   
-
-  const hamburger = document.getElementById('hamburger-icon');
-const navLinks = document.querySelector('.nav-links');
-
-
-hamburger.addEventListener('click', () => {
-  if (navLinks.classList.contains('show')) {
-
-    navLinks.classList.add('closing');
-
-    navLinks.addEventListener('animationend', () => {
-      navLinks.classList.remove('closing', 'show');
-
-    }, { once: true }); 
-  } else {
-   
-    navLinks.classList.add('show');
-  }
-});
-
-
-
-
-const header = document.querySelector('.header');
-
-let lastScrollY = window.scrollY; 
-
-
-function handleScroll() {
-  if (window.scrollY > lastScrollY) {
-
-    header.classList.add('hidden');
-  } else {
-
-    header.classList.remove('hidden');
-  }
-  lastScrollY = window.scrollY; 
-}
-
-
-window.addEventListener('scroll', handleScroll);
-
-</script>
+    setInterval(changeImage, 5000);
+  
+    // Touch event handling for mobile devices
+    let startX = 0;
+  
+    document.querySelector('.hero-slider').addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
+  
+    document.querySelector('.hero-slider').addEventListener('touchend', (e) => {
+      const endX = e.changedTouches[0].clientX;
+      if (startX > endX + 50) {
+        changeImage(); // Swipe left to go to the next image
+      } else if (startX < endX - 50) {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        images.forEach((img, i) => {
+          img.classList.toggle('active', i === currentIndex);
+        });
+      }
+    });
+  
+    const hamburger = document.getElementById('hamburger-icon');
+    const navLinks = document.querySelector('.nav-links');
+  
+    hamburger.addEventListener('click', () => {
+      if (navLinks.classList.contains('show')) {
+        navLinks.classList.add('closing');
+        navLinks.addEventListener('animationend', () => {
+          navLinks.classList.remove('closing', 'show');
+        }, { once: true });
+      } else {
+        navLinks.classList.add('show');
+      }
+    });
+  
+    const header = document.querySelector('.header');
+    let lastScrollY = window.scrollY;
+  
+    function handleScroll() {
+      if (window.scrollY > lastScrollY) {
+        header.classList.add('hidden');
+      } else {
+        header.classList.remove('hidden');
+      }
+      lastScrollY = window.scrollY;
+    }
+  
+    window.addEventListener('scroll', handleScroll);
+  </script>
 
   
 </body>
